@@ -1,5 +1,6 @@
 import './Expenses.css'
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 
 
 function Expenses(props) {
@@ -10,11 +11,11 @@ function Expenses(props) {
         expenseitems.push(<ExpenseItem expenseData={element}></ExpenseItem>)
     })
 
-    
+
     return (
-        <div className='expenses'>
+        <Card className='expenses'>
             {expenseitems}
-        </div>
+        </Card>
     )
 }
 
