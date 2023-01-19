@@ -6,28 +6,22 @@ import {useState} from "react";
 
 
 function Expenses(props) {
-    const recivedExpenseData = props.expenseData
-    const expenseitems = []
-    // const [defaultYear, setYear]  = useState({
-    //     filteredYear: '',
-    //     setYear: '2023'
-    // })
-    // console.log(filteredYear.setYear)
-    // const onChangeFilter = (event) =>{
-    //     setYear({
-    //         ...defaultYear,
-    //         filteredYear: event.target.value
-    //     })
-    // }
-    recivedExpenseData.forEach(element => {
-        expenseitems.push(<ExpenseItem expenseData={element}></ExpenseItem>)
-    })
+    const [filterYear, setFilterYear] = useState('2023')
 
+    const [expenseItems, setExpenseItems] = useState(
+        props.expenseData.map((expense) => {
+            return <ExpenseItem expenseData={expense}></ExpenseItem>
+        })
+    )
+    const saveSelectYearhandler = (year) => {
+        setFilterYear(year)
+    }
+    console.log(props.expenseData[0].date)
 
     return (
         <Card className='expenses'>
-            <ExpensesFilter></ExpensesFilter>
-            {expenseitems}
+            <ExpensesFilter selected={filterYear} onSelectChange={saveSelectYearhandler}></ExpensesFilter>
+            {expenseItems}
         </Card>
     )
 }
