@@ -16,7 +16,7 @@ const App = () => {
         amount: 30.99
     }, {
         id: 'i3',
-        date: new Date(2025, 0, 12),
+        date: new Date(2024, 0, 12),
         title: 'New jeans',
         amount: 19.99
     }]

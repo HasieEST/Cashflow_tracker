@@ -1,11 +1,18 @@
-.new-expense__controls {
+.new-expense__init {
     display: flex;
+    justify-content: center;
+}
+
+.new-expense__controls {
+    display: none;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
     text-align: left;
 }
-
+.new-expense__buttons {
+    display: none;
+}
 .new-expense__control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
