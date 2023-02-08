@@ -1,42 +1,29 @@
 import './App.css';
-import Expenses from "./components/Expenses/Expenses";
-import NewExpense from "./components/NewExpense/NewExpense";
+import Tasks from "./components/Tasks/Tasks";
+import NewTask from "./components/NewTask/NewTask";
 import {useState} from "react";
 
 const App = () => {
-    const DummyExpenses = [{
-        id: 'i1',
-        date: new Date(2023, 0, 10),
-        title: 'New book',
-        amount: 30.99
-    }, {
-        id: 'i2',
-        date: new Date(2024, 0, 10),
-        title: 'New ice',
-        amount: 30.99
-    }, {
-        id: 'i3',
-        date: new Date(2024, 0, 12),
-        title: 'New jeans',
-        amount: 19.99
-    }]
 
-    const [expenses, setExpenses] = useState(DummyExpenses)
+    const DummyTasks = [{id: 'i1', date: new Date(2023, 1, 10), task: 'TaskList React', priority: 'High'}]
 
 
-    const addExpensehanlder = (expense) => {
+    const [task, setTask] = useState(DummyTasks)
+
+
+    const addTaskHandler = (task) => {
         console.log('In App.js')
-        setExpenses((previousExpenses) => {
-                return [expense, ...previousExpenses]
+        setTask((previousExpenses) => {
+                return [task, ...previousExpenses]
             }
         )
     }
 
     return (
         <div className="App">
-            <NewExpense onAddExpense={addExpensehanlder}></NewExpense>
+            <NewTask onAddTask={addTaskHandler}></NewTask>
 
-            <Expenses expenseData={expenses}></Expenses>
+            <Tasks tasksData={task}></Tasks>
         </div>
     );
 }
