@@ -31,20 +31,24 @@ const ExpenseForm = (props) => {
     }
     const submitHandler = (event) => {
         event.preventDefault()
-        const expenseData = {
-            title: userInput.enteredTitle,
-            amount: userInput.enteredAmount,
-            date: new Date(userInput.enteredDate)
+        if (userInput.enteredTitle !== '' && userInput.enteredAmount !== '' && userInput.enteredDate !== '') {
+            const expenseData = {
+                title: userInput.enteredTitle,
+                amount: userInput.enteredAmount,
+                date: new Date(userInput.enteredDate)
+            }
+            props.onSaveExpenseData(expenseData)
+            setUserInput({
+                enteredTitle: '',
+                enteredDate: '',
+                enteredAmount: ''
+            })
+            document.getElementsByClassName('new-expense__buttons')[0].style.display = 'none'
+            document.getElementsByClassName('new-expense__controls')[0].style.display = 'none'
+            document.getElementsByClassName('new-expense__init')[0].style.display = 'flex'
+        } else {
+            alert('You have failed to fill fields properly!')
         }
-        props.onSaveExpenseData(expenseData)
-        setUserInput({
-            enteredTitle: '',
-            enteredDate: '',
-            enteredAmount: ''
-        })
-        document.getElementsByClassName('new-expense__buttons')[0].style.display = 'none'
-        document.getElementsByClassName('new-expense__controls')[0].style.display = 'none'
-        document.getElementsByClassName('new-expense__init')[0].style.display='flex'
     }
     const cancelHandler = (event) => {
         event.preventDefault()
@@ -55,19 +59,20 @@ const ExpenseForm = (props) => {
         })
         document.getElementsByClassName('new-expense__buttons')[0].style.display = 'none'
         document.getElementsByClassName('new-expense__controls')[0].style.display = 'none'
-        document.getElementsByClassName('new-expense__init')[0].style.display='flex'
+        document.getElementsByClassName('new-expense__init')[0].style.display = 'flex'
     }
-    const openFormHandler = (event)=> {
+    const openFormHandler = (event) => {
         event.preventDefault()
         document.getElementsByClassName('new-expense__buttons')[0].style.display = 'flex'
         document.getElementsByClassName('new-expense__controls')[0].style.display = 'flex  '
-        document.getElementsByClassName('new-expense__init')[0].style.display='none'
+        document.getElementsByClassName('new-expense__init')[0].style.display = 'none'
     }
 
     return (
         <form>
             <div className="new-expense__init">
-                <button className="new-expense__actions" type="submit" onClick={openFormHandler}>Add a new expense</button>
+                <button className="new-expense__actions" type="submit" onClick={openFormHandler}>Add a new expense
+                </button>
             </div>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
