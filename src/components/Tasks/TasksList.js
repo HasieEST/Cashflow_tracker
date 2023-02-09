@@ -9,7 +9,7 @@ const TasksList = (props) => {
     return (
         <ul className={"expense-list"}>
             {
-                props.filteredTasks.map((task) => {
+                props.filteredTasks.sort((a,b)=> a.date.getTime()-b.date.getTime()).map((task) => {
                     return <TaskItem taskData={task}></TaskItem>
                 })
             }
