@@ -4,7 +4,7 @@ import "./TasksList.css";
 
 const TasksList = (props) => {
     if (props.filteredTasks.length === 0) {
-        return <p className={"expenses-list__fallback"}>No expenses added for selected year!</p>
+        return <p className={"expenses-list__fallback"}>No tasks added for selected priority!</p>
     }
     return (
         <ul className={"expense-list"}>
