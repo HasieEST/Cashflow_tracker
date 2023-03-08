@@ -5,7 +5,7 @@ import {useState} from "react";
 
 const App = () => {
 
-    const DummyTasks = [{id: 'i1', date: new Date(2023, 1, 10), task: 'TaskList React', priority: 'High'}]
+    const DummyTasks = []
 
 
     const [task, setTask] = useState(DummyTasks)
