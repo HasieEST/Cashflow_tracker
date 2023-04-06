@@ -3,9 +3,9 @@ import './NewTask.css'
 import TaskForm from "./TaskForm";
 
 const NewTask = (props) => {
-    const saveTaskDataHandler = (enteredExpenseData) => {
+    const saveTaskDataHandler = (enteredTaskData) => {
         const taskData = {
-            ...enteredExpenseData,
+            ...enteredTaskData,
             id:Math.random().toString()
         }
        props.onAddTask(taskData)
@@ -13,7 +13,7 @@ const NewTask = (props) => {
 
 
     return(
-        <div className='new-expense'>
+        <div className='new-task'>
             <TaskForm onSaveTaskData={saveTaskDataHandler}></TaskForm>
         </div>
     )
