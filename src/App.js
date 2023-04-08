@@ -64,8 +64,7 @@ const App = () => {
                 onLogout: logoutHandler
             }}>
                 <Header onLogout={logoutHandler} />
-                {logged && <NewTask onAddTask={addTaskHandler}></NewTask>}
-                {!logged && <Login onLogin={loginHandler}></Login>}
+                {logged ? (<NewTask onAddTask={addTaskHandler}></NewTask>):(<Login onLogin={loginHandler}></Login>)}
             </AuthContext.Provider>
 
             <Tasks tasksData={task}></Tasks>
