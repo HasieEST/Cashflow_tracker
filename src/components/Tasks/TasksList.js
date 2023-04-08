@@ -4,10 +4,10 @@ import "./TasksList.css";
 
 const TasksList = (props) => {
     if (props.filteredTasks.length === 0) {
-        return <p className={"expenses-list__fallback"}>No tasks added for selected priority!</p>
+        return <p className={"tasks-list__fallback"}>No tasks added for selected priority!</p>
     }
     return (
-        <ul className={"expense-list"}>
+        <ul className={"task-list"}>
             {
                 props.filteredTasks.sort((a,b)=> a.date.getTime()-b.date.getTime()).map((task) => {
                     return <TaskItem taskData={task}></TaskItem>

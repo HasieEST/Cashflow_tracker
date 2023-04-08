@@ -31,8 +31,8 @@ const App = () => {
 
     const addTaskHandler = (task) => {
         console.log('In App.js')
-        setTask((previousExpenses) => {
-            return [task, ...previousExpenses]
+        setTask((previoustasks) => {
+            return [task, ...previoustasks]
         }
         )
     }
@@ -64,15 +64,10 @@ const App = () => {
                 onLogout: logoutHandler
             }}>
                 <Header onLogout={logoutHandler} />
-                <main> 
-                
-                {!logged && <NewTask onAddTask={addTaskHandler}></NewTask>} 
-                {logged && <Login onLogin={loginHandler}></Login>}
-            </main>
-
-
+                {logged && <NewTask onAddTask={addTaskHandler}></NewTask>}
+                {!logged && <Login onLogin={loginHandler}></Login>}
             </AuthContext.Provider>
-            
+
             <Tasks tasksData={task}></Tasks>
         </div>
     );

@@ -17,7 +17,7 @@ function Tasks(props) {
     else return task})
 
     return (
-        <Card className='expenses'>
+        <Card className='tasks'>
             <TasksFilter selected={filterTask} onSelectChange={saveSelectTaskhandler}></TasksFilter>
             <TasksList filteredTasks={filterTasksItems}></TasksList>
         </Card>

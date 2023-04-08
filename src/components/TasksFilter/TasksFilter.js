@@ -9,8 +9,8 @@ const TasksFilter = (props) => {
     }
 
     return (
-        <div className='expenses-filter'>
-            <div className='expenses-filter__control'>
+        <div className='tasks-filter'>
+            <div className='tasks-filter__control'>
                 <label>Filter by priority</label>
                 <select value={props.selected} onChange={selectPriorityHandler}>
                     <option value='All'>All</option>

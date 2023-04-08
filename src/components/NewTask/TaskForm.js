@@ -32,9 +32,9 @@ const TaskForm = (props) => {
             setUserInput({
                 enteredTask: '', enteredDate: '', enteredPriority: ''
             })
-            document.getElementsByClassName('new-expense__buttons')[0].style.display = 'none'
-            document.getElementsByClassName('new-expense__controls')[0].style.display = 'none'
-            document.getElementsByClassName('new-expense__init')[0].style.display = 'flex'
+            document.getElementsByClassName('new-task__buttons')[0].style.display = 'none'
+            document.getElementsByClassName('new-task__controls')[0].style.display = 'none'
+            document.getElementsByClassName('new-task__init')[0].style.display = 'flex'
         }
         else {
             alert('You have forgotten to fill in something. Please check your form!')
@@ -46,33 +46,33 @@ const TaskForm = (props) => {
         setUserInput({
             enteredTask: '', enteredDate: '', enteredPriority: ''
         })
-        document.getElementsByClassName('new-expense__buttons')[0].style.display = 'none'
-        document.getElementsByClassName('new-expense__controls')[0].style.display = 'none'
-        document.getElementsByClassName('new-expense__init')[0].style.display = 'flex'
+        document.getElementsByClassName('new-task__buttons')[0].style.display = 'none'
+        document.getElementsByClassName('new-task__controls')[0].style.display = 'none'
+        document.getElementsByClassName('new-task__init')[0].style.display = 'flex'
     }
     const openFormHandler = (event) => {
         event.preventDefault()
-        document.getElementsByClassName('new-expense__buttons')[0].style.display = 'flex'
-        document.getElementsByClassName('new-expense__controls')[0].style.display = 'flex  '
-        document.getElementsByClassName('new-expense__init')[0].style.display = 'none'
+        document.getElementsByClassName('new-task__buttons')[0].style.display = 'flex'
+        document.getElementsByClassName('new-task__controls')[0].style.display = 'flex  '
+        document.getElementsByClassName('new-task__init')[0].style.display = 'none'
     }
 
     return (<form>
-            <div className="new-expense__init">
-                <button className="new-expense__actions" type="submit" onClick={openFormHandler}>Add a new Task
+            <div className="new-task__init">
+                <button className="new-task__actions" type="submit" onClick={openFormHandler}>Add a new Task
                 </button>
             </div>
-            <div className='new-expense__controls'>
-                <div className='new-expense__control'>
+            <div className='new-task__controls'>
+                <div className='new-task__control'>
                     <label>Task</label>
                     <input type='text' onChange={taskChangeHandler} value={userInput.enteredTask}/>
                 </div>
-                <div className='new-expense__control'>
+                <div className='new-task__control'>
                     <label>Date</label>
                     <input type='date' min='2023-01-18' max='2025-12-31' onChange={dateChangeHandler}
                            value={userInput.enteredDate}/>
                 </div>
-                <div className='new-expense__control'>
+                <div className='new-task__control'>
                     <label>Priority</label>
                     <select onChange={priorityChangeHandler} value={userInput.enteredPriority}>
                         <option value='' hidden>Select an Option</option>
@@ -82,11 +82,11 @@ const TaskForm = (props) => {
                     </select>
                 </div>
             </div>
-            <div className='new-expense__buttons'>
-                <div className='new-expense__actions'>
-                    <button type='submit' onClick={submitHandler}>Add Expense</button>
+            <div className='new-task__buttons'>
+                <div className='new-task__actions'>
+                    <button type='submit' onClick={submitHandler}>Add task</button>
                 </div>
-                <div className='new-expense__actions'>
+                <div className='new-task__actions'>
                     <button type="submit" onClick={cancelHandler}>Cancel</button>
                 </div>
             </div>

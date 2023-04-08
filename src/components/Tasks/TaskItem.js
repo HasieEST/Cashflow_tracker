@@ -7,11 +7,11 @@ function TaskItem(props) {
 
 
     return (
-        <Card className="expense-item">
+        <Card className="task-item">
             <TaskDate date={props.taskData.date}></TaskDate>
-            <div className="expense-item__description">
+            <div className="task-item__description">
                 <h2>{props.taskData.task}</h2>
-                <div className="expense-item__price">{props.taskData.priority}</div>
+                <div className="task-item__price">{props.taskData.priority}</div>
             </div>
         </Card>
     )

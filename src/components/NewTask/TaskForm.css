@@ -1,25 +1,25 @@
-.new-expense__init {
+.new-task__init {
     display: flex;
     justify-content: center;
 }
 
-.new-expense__controls {
+.new-task__controls {
     display: none;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
     text-align: left;
 }
-.new-expense__buttons {
+.new-task__buttons {
     display: none;
 }
-.new-expense__control label {
+.new-task__control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
 }
 
-.new-expense__control input {
+.new-task__control input {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -27,7 +27,7 @@
     width: 20rem;
     max-width: 100%;
 }
-.new-expense__control select {
+.new-task__control select {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -36,6 +36,6 @@
     max-width: 100%;
 }
 
-.new-expense__actions {
+.new-task__actions {
     text-align: right;
 }

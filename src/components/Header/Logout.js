@@ -10,7 +10,7 @@ const Logout = () => {
                 return (
                     <nav className={classes.nav}>
                         <ul>
-                            {context.isLoggedIn && (
+                            {context.logged && (
                                 <li>
                                     <button onClick={context.onLogout}>Logout</button>
                                 </li>
